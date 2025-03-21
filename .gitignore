@@ -1,0 +1,25 @@
+# Dependencias de Node.js
+node_modules/
+
+# Variables de entorno
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log
+
+.vscode/
+.idea/
+*.swp
+*.sublime-*
+
+.DS_Store
+Thumbs.db
+
+dist/
+build/
+
+*.pid
+
+*.gz

@@ -1,0 +1,204 @@
+:root[data-theme="light"] {
+    --theme-color: linear-gradient(to bottom, rgb(23, 88, 158), rgb(71, 156, 218));
+    --primary-color: rgb(36, 119, 191);
+    --secundary-color: rgb(21, 78, 141);
+    --extra-color: rgb(26, 80, 143);
+    --text-color: rgb(255, 233, 207);
+    --text-link: rgb(65, 80, 155);
+    --mobile-menu: linear-gradient(to right, rgb(36, 119, 191, 0.9), rgb(22, 85, 140, 0.9));
+    --active-color: #292F49;
+    --hover-color: rgb(28, 95, 170, .8);
+    --elements-shadows: rgba(34, 49, 66, 0.4);
+    --important-text: rgba(255, 240, 108, 0.98);
+    --mobile-profile-gradient-color: linear-gradient(to bottom, rgb(23, 88, 158, 0.8), rgb(36, 119, 191, 0.7));
+    --gradient-color-2: rgba(230, 230, 230, 0.820);
+    --gradient-color-3: rgba(240, 240, 240, 0.999);
+    --menu-line-1: rgb(60, 151, 255);
+    --menu-line-2: rgb(126, 196, 223);
+    --icons-color: var(--text-color);
+    --icons-hover: white;
+    --magic-button: rgba(0, 74, 143, 0.8);
+    --shadow-button: var(--menu-line-2);
+    --line-button: var(--menu-line-1);
+    --text-button: rgb(230, 230, 230);
+    --tag-shadows: 0 4px 6px var(--elements-shadows);
+    --tag-hover: 0 4px 10px 1px rgb(209, 234, 255);
+    --submit-color: var(--acess-color);
+    --submit-hover: 0 0 24px 3px var(--important-text);
+    --sun-color: var(--text-color);
+    --arrow-color: rgb(139, 194, 248, .9);
+    --bckg-contact: linear-gradient(to bottom, transparent, var(--secundary-color));
+    --placeholder-color: rgb(223, 219, 214, .8);
+    --wave-top-shadow: rgba(80, 173, 255, 0.8);
+    --wave-bottom-shadow: rgba(255, 255, 255, 0.529);
+    --wave-top-color: rgb(71, 156, 218);
+    --wave-bottom-color: rgb(21, 78, 141);
+    --gradient-wave: linear-gradient(to bottom, var(--wave-top-color), var(--wave-bottom-color));
+    --separator-color: var(--text-color);
+    --transition: .5s ease-in-out;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --theme-color: linear-gradient(to bottom, rgb(5, 18, 41), rgb(9, 41, 83));
+    --primary-color: rgb(5, 19, 45);
+    --secundary-color: rgb(7, 14, 32);
+    --extra-color: rgb(10, 56, 99);
+    --text-color: rgb(223, 219, 214);
+    --text-link: rgb(72, 145, 212);
+    --mobile-menu: linear-gradient(to left, rgba(7, 26, 60, 0.9), rgba(7, 10, 23, 0.9));
+    --active-color: #292F49;
+    --hover-color: rgb(10, 56, 99, .9);
+    --text-navbar: rgb(222, 225, 237, .9);
+    --text-color-inverse: #9DA6CA;
+    --shallow-bckgr-color: rgba(68, 75, 90, .7);
+    --elements-shadows: rgb(13, 17, 22, .4);
+    --menu-mobile-background-color: #252B43;
+    --acess-color: rgba(19, 242, 242, 1);
+    --important-text: rgba(255, 230, 0, .9);
+    --title-color: rgba(38, 165, 165, 1);
+    --acent-color: rgb(170, 200, 255);
+    --one-text: #292929;
+    --mobile-profile-gradient-color: linear-gradient(to bottom, rgb(5, 18, 43, .9), rgb(13, 28, 49, .8));
+    --gradient-color-2: rgba(34, 48, 78, 0.850);
+    --gradient-color-1: rgba(55, 65, 81, 0.820);
+    --menu-line-1: rgb(60, 151, 255, 0.9);
+    --menu-line-2: rgba(126, 196, 223, 0.9);
+    --icons-color: var(--text-color);
+    --icons-hover: var(--menu-line-1);
+    --magic-button: rgb(5, 76, 126, .4);
+    --shadow-button: rgb(18, 79, 139, .8);
+    --line-button: rgba(0, 185, 164, 0.502);
+    --text-button: rgba(0, 255, 157, 0.925);
+    --tag-shadows: 0 0 1px 1px var(--text-color-inverse);
+    --tag-hover: 0 4px 20px rgba(72, 145, 212, 0.795);
+    --submit-color: var(--title-color);
+    --submit-hover: 0 0 10px 1px var(--title-color);
+    --sun-color: rgb(250, 255, 184);
+    --arrow-color: rgba(34, 135, 230, 0.9);
+    --bckg-contact: linear-gradient(to bottom, transparent, var(--primary-color));
+    --placeholder-color: rgb(223, 219, 214, .5);
+    --wave-top-shadow: rgba(0, 6, 12, 0.9);
+    --wave-bottom-shadow: rgba(0, 0, 0, 0.5);
+    --wave-top-color: rgb(10, 21, 46);
+    --wave-bottom-color: rgb(27, 48, 95);
+    --gradient-wave: linear-gradient(to bottom, var(--wave-top-color), var(--wave-bottom-color));
+    --separator-color: var(--arrow-color);
+    --transition: .5s ease-in-out;
+    color-scheme: dark;
+
+}
+
+* {
+    transition: background var(--transition), opacity var(--transition);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Cordelina';
+    src: url(/public/fonts/cordelina.woff) format('woff');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Basic';
+    src: url(/public/fonts/SVBasicManual.woff) format('woff');
+    font-style: normal;
+    font-weight: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Basic-bold';
+    src: url(/public/fonts/SVBasicManual-Bold.woff) format('woff');
+    font-style: normal;
+    font-weight: 700;
+    font-display: fallback;
+}
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 75px;
+}
+
+
+body {
+    transition: background .3s ease;
+    letter-spacing: 2px;
+    color: var(--text-color);
+
+    & h1,
+    h2 {
+        font-family: 'Cordelina', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        letter-spacing: 2px;
+        font-weight: 100;
+    }
+
+    & a,
+    p,
+    h3 {
+        font-family: 'Basic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        letter-spacing: 2px;
+    }
+
+}
+
+:root[data-theme="light"] body,
+:root[data-theme="dark"] body {
+    background: var(--theme-color);
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--text-link);
+}
+
+
+a:focus-visible:focus-within {
+    outline: .1px groove #99a30c6e;
+    outline-offset: 1px;
+    background-color: #99a30c6e;
+    border-radius: 5px;
+}
+
+button:focus-visible {
+    outline: .1px groove #99a30c6e;
+    outline-offset: 1px;
+    background-color: #99a30c6e;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 1vw + 1rem, 3.12rem)
+}
+
+.horizontal-padding {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.vertical-padding {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+@media (min-width: 950px) {
+    .horizontal-padding {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .vertical-padding {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
