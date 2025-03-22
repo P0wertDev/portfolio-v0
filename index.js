@@ -42,3 +42,5 @@ app.post("/sendMail.js", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Ejecutando el puerto ${PORT}`));
+
+export default app;
