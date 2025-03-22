@@ -4,6 +4,7 @@ footer {
     background: linear-gradient(0deg, rgba(36, 76, 83, 0.2) 30%, transparent);
     padding: 20px;
     cursor: default;
+    display: flex;
 }
 
 .footer-credits {
@@ -31,6 +32,12 @@ footer {
 }
 
 
+.arrow-up {
+    display: none;
+}
+
+
+
 @media (width > 950px) {
     .footer-designer::after {
         content: "(P0wert.Dev)";
@@ -39,6 +46,29 @@ footer {
         transition: transform .5s ease, opacity .3s ease;
         opacity: 0;
         margin-left: 10px;
+    }
+
+    .arrow-up {
+        left: 93%;
+        margin-bottom: 15px;
+        display: inline-block;
+        width: 3rem;
+        height: auto;
+        position: absolute;
+        background: rgba(36, 76, 83, 0.5);
+        padding: 8px 5px 1px;
+        border-radius: 15px;
+        transition: box-shadow .3s ease;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+
+        &>svg {
+            fill: var(--arrow-color);
+            filter: drop-shadow(0 -1px 1px var(--elements-shadows));
+        }
+    }
+
+    .arrow-up:hover {
+        box-shadow: 0 0 15px var(--menu-line-2);
     }
 
     .footer-designer:hover::after {
