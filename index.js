@@ -21,7 +21,7 @@ app.post("/sendMail.js", async (req, res) => {
 
     const htmlMsg = `<p><strong>De:</strong> ${email} </p> <p><strong>Mensaje:</strong></p> <p>${html}</p>`
 
-    if (!name || !email || !subject || !html) return (res.status(400).json({ error: "Todos los datos son requeridos, gracias" }));
+    if (!name || !email || !html) return (res.status(400).json({ error: "Todos los datos son requeridos, gracias" }));
 
     try {
         const data = await resend.emails.send({
