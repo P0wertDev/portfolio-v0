@@ -16,24 +16,6 @@ app.use(express.static(path.join(path.resolve(), "/")))
 app.use(cors());
 app.use(express.urlencoded({ extended: true }))
 
-
-// app.get('/', async (req, res) => {
-//     res.sendFile(path.join(path.resolve(), "public",  "index.html"));
-//     const { data, error } = await resend.emails.send( {
-//         name: document.getElementById('name').value,
-//         from: document.getElementById('email').value,
-//         subject: document.getElementById('subject').value,
-//         html: document.getElementById('message').value,
-//         to: [process.env.EMAIL_TO],
-//     });
-
-//     if(error) {
-//         return res.status(400).json({ error });
-//     }
-
-//     res.status(200).json({ data });
-// })
-
 app.post("/sendMail.js", async (req, res) => {
     const { name, email, subject, html } = req.body;
 
@@ -60,4 +42,3 @@ app.post("/sendMail.js", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Ejecutando el puerto ${PORT}`));
-
