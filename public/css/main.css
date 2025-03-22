@@ -112,15 +112,11 @@
 
 @font-face {
     font-family: 'Basic-bold';
-    src: url(/portfolio-v0/public/fonts/SVBasicManual-Bold.woff) format('woff');
+    src: url(../fonts/SVBasicManual-Bold.woff) format('woff');
     font-style: normal;
     font-weight: 700;
     font-display: fallback;
 }
-
-
-
-
 
 html {
     scroll-behavior: smooth;

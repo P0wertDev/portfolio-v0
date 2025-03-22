@@ -2,7 +2,7 @@
 
 .profile {
   transition: 0.4s;
-  background: var(--mobile-profile-gradient-color), url(../public/picture/particles-dark-mobile.webp) no-repeat right fixed;
+  background: var(--mobile-profile-gradient-color), url(../picture/particles-dark-mobile.webp) no-repeat right fixed;
   background-size: cover;
   min-height: 100dvh;
   display: grid;
@@ -16,7 +16,7 @@
 }
 
 :root[data-theme="light"] .profile {
-  background: var(--mobile-profile-gradient-color), url(../public/picture/particles-light-mobile.webp) no-repeat right fixed;
+  background: var(--mobile-profile-gradient-color), url(../picture/particles-light-mobile.webp) no-repeat right fixed;
   background-size: cover;
 
 }
@@ -133,6 +133,7 @@
   font-weight: 500;
   font-size: clamp(1.25rem, 1.2269rem + 0.1231vw, 1.3rem);
   color: var(--text-color);
+  text-wrap: balance;
 }
 
 .profile-separator {
