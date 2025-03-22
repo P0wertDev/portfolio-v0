@@ -2,7 +2,7 @@
 
 .profile {
   transition: 0.4s;
-  background: var(--mobile-profile-gradient-color), url(/portfolio-v0/public/picture/particles-dark-mobile.webp) no-repeat right fixed;
+  background: var(--mobile-profile-gradient-color), url(../public/picture/particles-dark-mobile.webp) no-repeat right fixed;
   background-size: cover;
   min-height: 100dvh;
   display: grid;
@@ -16,7 +16,7 @@
 }
 
 :root[data-theme="light"] .profile {
-  background: var(--mobile-profile-gradient-color), url(/portfolio-v0/public/picture/particles-light-mobile.webp) no-repeat right fixed;
+  background: var(--mobile-profile-gradient-color), url(../public/picture/particles-light-mobile.webp) no-repeat right fixed;
   background-size: cover;
 
 }
