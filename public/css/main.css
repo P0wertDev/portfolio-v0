@@ -98,13 +98,13 @@
 
 @font-face {
     font-family: 'Cordelina';
-    src: url(/public/fonts/cordelina.woff) format('woff');
+    src: url(/portfolio-v0/public/fonts/cordelina.woff) format('woff');
     font-display: fallback;
 }
 
 @font-face {
     font-family: 'Basic';
-    src: url(/public/fonts/SVBasicManual.woff) format('woff');
+    src: url(/portfolio-v0/public/fonts/SVBasicManual.woff) format('woff');
     font-style: normal;
     font-weight: normal;
     font-display: fallback;
@@ -112,7 +112,7 @@
 
 @font-face {
     font-family: 'Basic-bold';
-    src: url(/public/fonts/SVBasicManual-Bold.woff) format('woff');
+    src: url(/portfolio-v0/public/fonts/SVBasicManual-Bold.woff) format('woff');
     font-style: normal;
     font-weight: 700;
     font-display: fallback;
