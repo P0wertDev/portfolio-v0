@@ -16,7 +16,7 @@ app.use(express.static(path.join(path.resolve(), "/")))
 app.use(cors());
 app.use(express.urlencoded({ extended: true }))
 
-app.post("/sendMail.js", async (req, res) => {
+app.post("app/sendMail.js", async (req, res) => {
     const { name, email, subject, html } = req.body;
 
     const htmlMsg = `<p><strong>De:</strong> ${email} </p> <p><strong>Mensaje:</strong></p> <p>${html}</p>`
