@@ -7,7 +7,7 @@ import cors from 'cors';
 configDotenv()
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 const resend = new Resend(process.env.RSKEY);
 
 app.use(express.json());

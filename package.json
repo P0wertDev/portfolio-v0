@@ -9,9 +9,10 @@
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rowert Méndez <p0wert.dev@gmail.com>",
   "license": "ISC",
-  "description": "",
+  "description": "Personal portfolio",
+  "private": false,
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
