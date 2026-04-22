@@ -54,16 +54,24 @@ menuLinks.forEach((menuLink) => {
 
 const bubbleHello = document.querySelector(".profile-hello")
 const myName = document.querySelector(".profile-name");
+const longestText = "Rowert Méndez";
+const shortestText = "P0wert.Dev";
+
+let maxWidth = 0;
+maxWidth = myName.getBoundingClientRect().width;
+
 setTimeout(() => {
     myName.classList.add('flicker-active')
 }, 6000)
 
-myName.addEventListener("mouseover", () => {
-    myName.innerText = "P0wert.Dev    ";
+myName.addEventListener("mouseenter", () => {
+    myName.style.width = maxWidth + "px";
+    myName.innerText = shortestText;
 });
 
-myName.addEventListener("mouseout", () => {
-    myName.innerHTML = "Rowert Méndez";
+myName.addEventListener("mouseleave", () => {
+    myName.innerHTML = longestText;
+    myName.style.width = "";
 })
 
 
