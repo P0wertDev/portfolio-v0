@@ -1,11 +1,10 @@
 import { Resend } from "resend";
 
-
 export default async (req) => {
 
-    const resend = new Resend(ProcessingInstruction.env.RSKEY);
-
     if (req.method !== "POST") return new Response("Método no permitido", { status: 405 });
+
+    const resend = new Resend(process.env.RSKEY);
 
     const { name, email, subject, message } = await req.json();
 
@@ -25,8 +24,8 @@ export default async (req) => {
 
     try {
         await resend.emails.send({
-            from: process.env.EMAL_FROM, //NOTE - EJ: contacto@tudominio.com
-            to: process.env.EMAL_TO, //NOTE - correo personal
+            from: process.env.EMAIL_FROM, //NOTE - EJ: contacto@tudominio.com
+            to: process.env.EMAIL_TO, //NOTE - correo personal
             subject: `Nuevo mensaje de ${name}: ${subject}`,
             html: htmlMsg,
         });
