@@ -1,8 +1,10 @@
 import { Resend } from "resend";
 
-const resend = new Resend(ProcessingInstruction.env.RSKEY);
 
 export default async (req) => {
+
+    const resend = new Resend(ProcessingInstruction.env.RSKEY);
+
     if (req.method !== "POST") return new Response("Método no permitido", { status: 405 });
 
     const { name, email, subject, message } = await req.json();
