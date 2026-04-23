@@ -52,6 +52,8 @@ menuLinks.forEach((menuLink) => {
     }
 })
 
+/* ANIMACIÓN Y ANCHO FIJO PARA EL NOMBRE PRINCIPAL */
+
 const bubbleHello = document.querySelector(".profile-hello")
 const myName = document.querySelector(".profile-name");
 const longestText = "Rowert Méndez";
@@ -74,6 +76,7 @@ myName.addEventListener("mouseleave", () => {
     myName.style.width = "";
 })
 
+/* SECUENCIA DE EMOJIS */
 
 const emoji = document.querySelector(".resume-emoji");
 const emojiList = ["😁", "😀", "😄", "😎", "🙂", "😊", "😏", "🙃"];
@@ -91,3 +94,51 @@ function updateEmoji() {
 }
 
 updateEmoji();
+
+/* FORMULARIO DE CONTACTO */
+
+const mailForm = document.getElementById("mail-form");
+const notification = document.getElementById("notification-message");
+const submitBtn = document.querySelector(".contact-submit");
+
+mailForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    //NOTE - Deshabilito el botón mientras se procesa para evitar envíos dobles
+
+    submitBtn.disable = true;
+    submitBtn.textContent = "Enviando...";
+
+    try {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, subject, message }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            notification.textContent = data.message;
+            notification.style.color = "green";
+            mailForm.reset();
+        } else {
+            notification.textContent = data.error;
+            notification.style.color = "red";
+        }
+    } catch (err) {
+        console.error("Error de red:", err.message);
+        notification.textContent = "No se pudo conectar. Por facor, inténtalo de nuevo.";
+        notification.style.color = "red";
+    } finally {
+        //NOTE - Habilito de nuevo el botón, se envíe o no el mensaje
+
+        submitBtn.disable = false;
+        submitBtn.textContent = "Enviar";
+    }
+});

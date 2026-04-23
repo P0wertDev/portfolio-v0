@@ -14,9 +14,6 @@
   "description": "Personal portfolio",
   "private": false,
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "resend": "^4.1.2"
+    "resend": "^4.8.0"
   }
 }
