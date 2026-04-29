@@ -1,0 +1,63 @@
+{
+    "headerNav": {
+        "profile": "Profile",
+        "projects": "Projects",
+        "contact": "Contact",
+        "language": "ES"
+    },
+
+    "profileWelcoming": {
+        "welcome": "¡Welcome!",
+        "present": "I am,",
+        "profesion": "Web developer",
+        "resume": "I’m an enthusiastic, up-and-coming programmer specializing in JavaScript, TypeScript, and Node.js, with a solid foundation in HTML and CSS. My technical background and experience across various professional sectors have enabled me to adapt to constant technological changes, drawing on both theoretical and practical knowledge, and developing projects that I’ll soon be adding to this portfolio. I hope you like them.",
+        "btnCV": "Download CV",
+        "cvPath": "/public/pdf/CV_RowertM_EN.pdf"
+    },
+
+    "projectsSection": {
+        "previewPage": "Visit the website",
+        "frontendMentor": "Frontend Mentor",
+
+        "recipePage": {
+            "recipePageTitle": "Responsive static website",
+            "recipePageResume": "This is a simple page that describes a recipe for a French omelet. It features a tall, narrow card layout that spans the entire height of the webpage. This design was adapted from an exercise on the {{linkFM}} website."
+        },
+
+        "socialProfile": {
+            "socialProfileTitle": "Responsive social profile",
+            "socialProfileResume": "This is a user profile card template that includes links to my various social media accounts. The card is fully responsive and adapts to different device sizes. This design was based on an exercise from the {{linkFM}} website. "
+        },
+
+        "blogPreview": {
+            "blogPreviewTitle": "Responsive design card",
+            "blogPreviewResume": "This is a card located in the center of the page that contains a brief description of a blog about the basics of HTML and CSS. It stands out for its use of bold, solid colors. Vector images (SVG) were used in this project. This design was adapted from an exercise on the {{linkFM}} website. "
+        },
+
+        "qrComponent": {
+            "qrComponentTitle": "Responsive QR code card",
+            "qrComponentResume": "The page displays a centered card with a QR code that links directly to the website where the design was sourced: {{linkFM}}. In this project, I focused more than in others on creating a design that adapts to different devices and orientations."
+        },
+
+        "productComponent": {
+            "productComponentTitle": "Promotional product card",
+            "productComponentResume": "This page features a card in the center showcasing a fictional perfume promotion. The goal of the design was to focus on responsive design using a static image. This design was adapted from an exercise on the {{linkFM}} website."
+        }
+    },
+
+    "contactSection": {
+        "adressTitle": "Adress",
+        "adress": "Spain, Seville",
+        "phoneTitle": "Number Phone",
+        "contactTitle": "Would you like to contact me?",
+        "nameLabel": "Your name",
+        "emailLabel": "Your email",
+        "subjectLabel": "What is it about?",
+        "messageLabel": "Tell me, how can I help you?",
+        "btnSubmit": "Submit"
+    },
+
+    "footerSection": {
+        "madeBy": "Made By"
+    }
+}

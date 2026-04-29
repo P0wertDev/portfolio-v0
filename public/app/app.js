@@ -74,6 +74,7 @@ myName.addEventListener("mouseenter", () => {
 myName.addEventListener("mouseleave", () => {
     myName.innerHTML = longestText;
     myName.style.width = "";
+    maxWidth = myName.getBoundingClientRect().width;
 })
 
 /* SECUENCIA DE EMOJIS */

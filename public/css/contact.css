@@ -54,6 +54,24 @@
     margin-bottom: 10px;
 }
 
+.icn-mark::before {
+    content: url('/public/pictures/marcador.svg');
+    display: inline-block;
+    padding-right: 10px;
+    position: relative;
+    top: 3px;
+    filter: invert(1) brightness(.8);
+}
+
+.icn-phone::before {
+    content: url('/public/pictures/llamada-telefonica.svg');
+    display: inline-block;
+    padding-right: 10px;
+    position: relative;
+    top: 3px;
+    filter: invert(1) brightness(.8);
+}
+
 .contact-icn {
     padding-right: 10px;
     position: relative;
@@ -239,6 +257,8 @@
         font-size: 22px;
         margin-bottom: 1.5rem;
     }
+
+
 
     .contact-details-text {
         font-size: 18px;

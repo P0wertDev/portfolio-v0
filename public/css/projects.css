@@ -239,7 +239,7 @@
 
   .projects-description,
   .projects-job {
-    font-size: clamp(0.075rem, -5.9953rem + 9.8605vw, 1.3rem);
+    font-size: clamp(0.98rem, -5.9953rem + 9.8605vw, 1.3rem);
   }
 
   .projects-company {

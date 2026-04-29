@@ -1,0 +1,63 @@
+{
+    "headerNav": {
+        "profile": "Perfil",
+        "projects": "Proyectos",
+        "contact": "Contacto",
+        "language": "EN"
+    },
+
+    "profileWelcoming": {
+        "welcome": "¡Bienvenidos!",
+        "present": "Me llamo,",
+        "profesion": "Desarrollador enfocado en aplicaciones web",
+        "resume": "Programador entusiasta y en formación que se está especializando en JavaScript, TypeScript y Node.js, además, de tener una base sólida en HTML y CSS. Mi formación técnica previa y experiencia en diversos sectores profesionales, me han permitido adaptarme a los constantes cambios tecnológicos, basándome en fundamentos teóricos y prácticos, y elaborando proyectos que pronto estaré subiendo a este portfolio. Espero les guste.",
+        "btnCV": "Descargar CV",
+        "cvPath": "/public/pdf/CV_RowertM_ES.pdf"
+    },
+
+    "projectsSection": {
+        "previewPage": "Visitar página web",
+        "frontendMentor": "Frontend Mentor",
+
+        "recipePage": {
+            "recipePageTitle": "Página web estática responsive",
+            "recipePageResume": "Se trata de una página sencilla que describe la receta de una tortilla francesa. Tiene un diseño de tarjeta alargada que ocupa todo el alto de la página web. Este diseño se tomó de un ejercicio propuesto por la página web {{linkFM}}-"
+        },
+
+        "socialProfile": {
+            "socialProfileTitle": "Tarjeta de perfil de usuario",
+            "socialProfileResume": "Se trata de un modelo de tarjeta de usuario que incluye enlaces a mis distintas redes sociales. La tarjeta se adapta completamente a diferentes tamaños de dispositivos (responsive). Este diseño se tomó de un ejercicio propuesto por la página web {{linkFM}}."
+        },
+
+        "blogPreview": {
+            "blogPreviewTitle": "Tarjeta con diseño responsive",
+            "blogPreviewResume": "Se trata de una tarjeta ubicada en el centro de la página que contiene una breve descripción de un blog sobre los fundamentos de HTML y CSS. Destaca por el uso de colores vivos y sólidos. En este proyecto se implementaron imágenes vectoriales (SVG). Este diseño se tomó de un ejercicio de la página web {{linkFM}}."
+        },
+
+        "qrComponent": {
+            "qrComponentTitle": "Tarjeta con QR responsive",
+            "qrComponentResume": "La página muestra una tarjeta centrada con un código QR que redirige directamente a la página de donde se extrajo el diseño: {{linkFM}}. En este proyecto, me centré más que en los demás en conseguir un diseño adaptable a diferentes dispositivos y orientaciones."
+        },
+
+        "productComponent": {
+            "productComponentTitle": "Tarjeta de un producto en promoción",
+            "productComponentResume": "Se trata de una página que muestra, en el centro, una tarjeta con la promoción ficticia de un perfume. El objetivo del diseño era centrarse en el modelo responsive utilizando una imagen estática. Este diseño se tomó de un ejercicio propuesto por la página web {{linkFM}}."
+        }
+    },
+
+    "contactSection": {
+        "adressTitle": "Dirección",
+        "adress": "España, Sevilla",
+        "phoneTitle": "Teléfono",
+        "contactTitle": "¿Quieres contactarme?",
+        "nameLabel": "Tu nombre",
+        "emailLabel": "Tu correo",
+        "subjectLabel": "¿De que se trata?",
+        "messageLabel": "Cuéntame ¿Cómo puedo ayudarte?",
+        "btnSubmit": "Enviar"
+    },
+
+    "footerSection": {
+        "madeBy": "Hecho por"
+    }
+}
