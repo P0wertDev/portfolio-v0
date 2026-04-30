@@ -125,11 +125,11 @@ mailForm.addEventListener("submit", async (e) => {
             headers: { "Content-Type": "application/json" },
         });
 
-        const data = await response.text();
+        const data = await response.json();
         // const responseText = await response.text()
 
         if (response.status > 300) {
-            notification.innerHTML = data.message;
+            notification.textContent = data.message;
             notification.style.color = "rgb(255, 233, 207)";
             notification.classList.add("animation-msg-in");
 
@@ -149,7 +149,7 @@ mailForm.addEventListener("submit", async (e) => {
         }
 
         if (response.status >= 200 && response.status < 300) {
-            notification.innerHTML = data.message;
+            notification.textContent = data.message;
             notification.classList.add("animation-msg-in");
 
             setTimeout(() => {
@@ -164,8 +164,18 @@ mailForm.addEventListener("submit", async (e) => {
 
     } catch (err) {
         console.error("Error al enviar:", err.message);
-        // notification.textContent = "No se pudo conectar. Por favor, inténtalo de nuevo.";
-        // notification.style.color = "red";
+        notification.textContent = "No se pudo conectar. Por favor, inténtalo de nuevo.";
+        notification.style.color = "peru";
+        notification.classList.add("animation-msg-in");
+
+        setTimeout(() => {
+            notification.classList.remove("animation-msg-in");
+            notification.classList.add("animation-msg-out");
+        }, 5000);
+
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 6000)
     } finally {
         //NOTE - Habilito de nuevo el botón, se envíe o no el mensaje
 

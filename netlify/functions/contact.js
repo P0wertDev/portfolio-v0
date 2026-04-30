@@ -16,9 +16,9 @@ export default async (req) => {
     }
 
     const htmlMsg = `
-        <p><strong>De:</strong> ${name} (${email}) </p>
-        <h3>Mensaje:</h3>
-        <p>${message}</p>
+        <p style="font-size: 16px"><strong>De:</strong> ${name} (${email}) </p>
+        <h3 style="font-size: 22px">Mensaje:</h3>
+        <p style="font-size: 18px">${message}</p>
     `;
 
     try {
