@@ -99,18 +99,21 @@ updateEmoji();
 /* FORMULARIO DE CONTACTO */
 
 const mailForm = document.getElementById("mail-form");
-const notification = document.getElementById("notification-message");
-const submitBtn = document.querySelector(".contact-submit");
 
 mailForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const notification = document.getElementById("notification-message");
+    notification.innerHTML = "";
+    notification.style.display = "block";
+    notification.classList.remove("animation-msg-out");
 
-    //NOTE - Deshabilito el botón mientras se procesa para evitar envíos dobles
+    const submitBtn = document.querySelector(".contact-submit");
+
+    const formData = new FormData(mailForm);
+    const dataForm = Object.fromEntries(formData.entries());
+
+    //NOTE - Deshabilitar el botón mientras se procesa para evitar envíos dobles
 
     submitBtn.disable = true;
     submitBtn.textContent = "Enviando...";
@@ -118,28 +121,57 @@ mailForm.addEventListener("submit", async (e) => {
     try {
         const response = await fetch("/api/contact", {
             method: "POST",
+            body: JSON.stringify(dataForm),
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, email, subject, message }),
         });
 
-        const data = await response.json();
+        // const data = await response.json();
+        const responseText = await response.text()
 
-        if (response.ok) {
-            notification.textContent = data.message;
-            notification.style.color = "green";
-            mailForm.reset();
-        } else {
-            notification.textContent = data.error;
-            notification.style.color = "red";
+        if (response.status > 300) {
+            notification.innerHTML = responseText;
+            notification.style.color = "rgb(255, 233, 207)";
+            notification.classList.add("animation-msg-in");
+
+            setTimeout(() => {
+                notification.classList.remove("animation-msg-in");
+                notification.classList.add("animation-msg-out");
+            }, 5000);
+
+            setTimeout(() => {
+                notification.style.display = "none";
+            }, 6000);
+            return;
+
+            // notification.textContent = data.message;
+            // notification.style.color = "green";
+            // mailForm.reset();
         }
+
+        if (response.status >= 200 && response.status < 300) {
+            notification.innerHTML = responseText;
+            notification.classList.add("animation-msg-in");
+
+            setTimeout(() => {
+                notification.classList.remove("animation-msg-in");
+                notification.classList.add("animation-msg-out");
+            }, 5000);
+
+            setTimeout(() => {
+                notification.style.display = "none";
+            }, 6000)
+        }
+
     } catch (err) {
-        console.error("Error de red:", err.message);
-        notification.textContent = "No se pudo conectar. Por facor, inténtalo de nuevo.";
-        notification.style.color = "red";
+        console.error("Error al enviar:", err.message);
+        // notification.textContent = "No se pudo conectar. Por favor, inténtalo de nuevo.";
+        // notification.style.color = "red";
     } finally {
         //NOTE - Habilito de nuevo el botón, se envíe o no el mensaje
 
         submitBtn.disable = false;
         submitBtn.textContent = "Enviar";
     }
+
+    mailForm.reset();
 });

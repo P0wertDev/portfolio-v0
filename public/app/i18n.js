@@ -20,7 +20,6 @@ async function changeLanguage(lang) {
 
                 else
                     el.textContent = text;
-
             }
 
             if (key === "profileWelcoming.btnCV") {
@@ -56,7 +55,6 @@ function renderWithLink(container, fullText, linkLabel) {
     container.append(anchor);
     if (parts[1]) container.append(parts[1]);
 }
-
 
 const languageBtn = document.getElementById('translate-btn');
 
