@@ -125,7 +125,7 @@ mailForm.addEventListener("submit", async (e) => {
             headers: { "Content-Type": "application/json" },
         });
 
-        const data = await response.json();
+        const data = await response.text();
         // const responseText = await response.text()
 
         if (response.status > 300) {
