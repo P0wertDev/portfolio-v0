@@ -1,3 +1,5 @@
+import { getTranslation } from "./i18n.js";
+
 /* HAMBURGUESA */
 
 const nav = document.querySelector('.hamburger-btn');
@@ -113,9 +115,7 @@ mailForm.addEventListener("submit", async (e) => {
     const formData = new FormData(mailForm);
     const dataForm = Object.fromEntries(formData.entries());
 
-    //NOTE - Deshabilitar el botón mientras se procesa para evitar envíos dobles
-
-    submitBtn.disable = true;
+    submitBtn.disabled = true;
     submitBtn.textContent = "Enviando...";
 
     try {
@@ -126,10 +126,9 @@ mailForm.addEventListener("submit", async (e) => {
         });
 
         const data = await response.json();
-        // const responseText = await response.text()
 
         if (response.status > 300) {
-            notification.textContent = data.message;
+            notification.textContent = getTranslation(data.key || "contactSection.fail");
             notification.style.color = "rgb(255, 233, 207)";
             notification.classList.add("animation-msg-in");
 
@@ -143,13 +142,10 @@ mailForm.addEventListener("submit", async (e) => {
             }, 6000);
             return;
 
-            // notification.textContent = data.message;
-            // notification.style.color = "green";
-            // mailForm.reset();
         }
 
         if (response.status >= 200 && response.status < 300) {
-            notification.textContent = data.message;
+            notification.textContent = getTranslation(data.key || "contactSection.success");
             notification.classList.add("animation-msg-in");
 
             setTimeout(() => {
@@ -164,7 +160,7 @@ mailForm.addEventListener("submit", async (e) => {
 
     } catch (err) {
         console.error("Error al enviar:", err.message);
-        notification.textContent = "No se pudo conectar. Por favor, inténtalo de nuevo.";
+        notification.textContent = getTranslation("contactSection.errorConection");
         notification.style.color = "peru";
         notification.classList.add("animation-msg-in");
 
@@ -177,9 +173,7 @@ mailForm.addEventListener("submit", async (e) => {
             notification.style.display = "none";
         }, 6000)
     } finally {
-        //NOTE - Habilito de nuevo el botón, se envíe o no el mensaje
-
-        submitBtn.disable = false;
+        submitBtn.disabled = false;
         submitBtn.textContent = "Enviar";
     }
 

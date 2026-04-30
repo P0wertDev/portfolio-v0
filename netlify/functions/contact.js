@@ -23,8 +23,8 @@ export default async (req) => {
 
     try {
         await resend.emails.send({
-            from: process.env.EMAIL_FROM, //NOTE - EJ: contacto@tudominio.com
-            to: process.env.EMAIL_TO, //NOTE - correo personal
+            from: process.env.EMAIL_FROM,
+            to: process.env.EMAIL_TO,
             subject: subject,
             html: htmlMsg,
         });
@@ -32,14 +32,14 @@ export default async (req) => {
         return new Response(
             JSON.stringify({
                 ok: true,
-                message: "¡Mensaje enviado! Te responderé pronto 😁. Gracias por escribir"
+                key: "contactSection.success"
             }),
             { status: 200 }
         );
     } catch (err) {
         console.error("Error al enviar correo:", err.message);
         return new Response(
-            JSON.stringify({ error: "Error al enviar el correo, por favor, inténtalo de nuevo" }),
+            JSON.stringify({ error: "contactSection.fail" }),
             { status: 500 }
         );
     }

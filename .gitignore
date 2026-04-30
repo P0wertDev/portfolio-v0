@@ -24,3 +24,7 @@ build/
 
 *.gz
 .vercel
+
+# Local Netlify folder
+.netlify
+deno.lock

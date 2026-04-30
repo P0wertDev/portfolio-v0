@@ -54,7 +54,10 @@
         "emailLabel": "Your email",
         "subjectLabel": "What is it about?",
         "messageLabel": "Tell me, how can I help you?",
-        "btnSubmit": "Submit"
+        "btnSubmit": "Submit",
+        "success": "Message sent! I'll get back to you soon. Thanks for writing 😁.",
+        "fail": "An error occurred while sending the email. Please try again.",
+        "errorConection": "Unable to connect. Please try again."
     },
 
     "footerSection": {

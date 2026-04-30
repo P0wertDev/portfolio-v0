@@ -54,7 +54,10 @@
         "emailLabel": "Tu correo",
         "subjectLabel": "¿De que se trata?",
         "messageLabel": "Cuéntame ¿Cómo puedo ayudarte?",
-        "btnSubmit": "Enviar"
+        "btnSubmit": "Enviar",
+        "success": "¡Mensaje enviado! Te responderé pronto. Gracias por escribir 😁",
+        "fail": "Error al enviar el correo, por favor, inténtalo de nuevo",
+        "errorConection": "No se pudo conectar. Por favor, inténtalo de nuevo."
     },
 
     "footerSection": {

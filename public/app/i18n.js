@@ -1,8 +1,10 @@
+let translations = {}
+
 async function changeLanguage(lang) {
     try {
         // 1. Fetch del JSON correspondiente
         const response = await fetch(`public/locales/${lang}.json`);
-        const translations = await response.json();
+        translations = await response.json();
 
         // 2. Se busca todos los elementos que tengan el atributo data-i18n
         const elements = document.querySelectorAll('[data-i18n]');
@@ -14,7 +16,7 @@ async function changeLanguage(lang) {
 
             if (text) {
                 // 3. Lógica especial para los links
-                if (el.tagName === 'TEXTAREA' || el.tagName === 'IMPUT') el.setAttribute('placeholder', text)
+                if (el.tagName === 'TEXTAREA' || el.tagName === 'INPUT') el.setAttribute('placeholder', text)
 
                 else if (text.includes('{{linkFM}}')) renderWithLink(el, text, translations.projectsSection.frontendMentor);
 
@@ -36,6 +38,16 @@ async function changeLanguage(lang) {
 
     } catch (error) {
         console.error("Hubo un error al intentar cargar las traducciones:", error);
+    }
+}
+
+export function getTranslation(key) {
+    console.log("traducciones actuales:", translations);
+
+    try {
+        return key.split('.').reduce((obj, i) => obj[i], translations);
+    } catch (error) {
+        return key;
     }
 }
 
@@ -64,9 +76,6 @@ languageBtn.addEventListener('click', () => {
 
     languageBtn.textContent = currentLang.toUpperCase();
     changeLanguage(newLang);
-
-    localStorage.setItem('preferredLang', lang);
-    document.documentElement.lang = lang;
 });
 
 // Cargar idioma preferido al iniciar
