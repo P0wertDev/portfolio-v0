@@ -17,8 +17,7 @@ export default async (req) => {
 
     const htmlMsg = `
         <p><strong>De:</strong> ${name} (${email}) </p>
-        <p><strong>Asunto:</strong> ${subject} </p>
-        <p><strong>Mensaje:</strong></p>
+        <h3>Mensaje:</h3>
         <p>${message}</p>
     `;
 
@@ -26,7 +25,7 @@ export default async (req) => {
         await resend.emails.send({
             from: process.env.EMAIL_FROM, //NOTE - EJ: contacto@tudominio.com
             to: process.env.EMAIL_TO, //NOTE - correo personal
-            subject: `Nuevo mensaje de ${name}: ${subject}`,
+            subject: subject,
             html: htmlMsg,
         });
 
